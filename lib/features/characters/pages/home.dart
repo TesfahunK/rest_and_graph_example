@@ -21,7 +21,7 @@ class _HomePageState extends State<HomePage> {
         centerTitle: false,
         backgroundColor: UiConstants.accentColor,
         title: Text(
-          ["Starwars", "Rick n Morty"][_currentIndex],
+          ["Starwars", "Rick n Morty"].reversed.toList()[_currentIndex],
           style: textThemeOfContext(context)
               .titleLarge
               ?.copyWith(fontWeight: FontWeight.w400, color: Colors.white),
@@ -37,10 +37,10 @@ class _HomePageState extends State<HomePage> {
           },
           items: const [
             BottomNavigationBarItem(
-                label: "Starwars", icon: Icon(FontAwesomeIcons.empire)),
-            BottomNavigationBarItem(
                 label: "Rick n Morty",
-                icon: Icon(FontAwesomeIcons.spaceAwesome))
+                icon: Icon(FontAwesomeIcons.spaceAwesome)),
+            BottomNavigationBarItem(
+                label: "Starwars", icon: Icon(FontAwesomeIcons.empire)),
           ]),
     );
   }
