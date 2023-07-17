@@ -15,8 +15,8 @@ class ShipResultStateProvider extends StateNotifier<ShipResultState> {
     fetchShips();
   }
 
-  Future fetchShips() async {
-    state = state.copyWith(loading: true, result: null);
+  Future fetchShips({bool reload = true}) async {
+    state = state.copyWith(loading: reload, result: null);
 
     final result = await service.getShips();
 

@@ -35,7 +35,8 @@ class AllShips extends ConsumerWidget {
               return false;
             },
             child: RefreshIndicator(
-                onRefresh: () async => await controller.fetchShips(),
+                onRefresh: () async =>
+                    await controller.fetchShips(reload: false),
                 child: Builder(
                   builder: (context) {
                     if (shipState.loading) {
