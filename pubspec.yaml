@@ -25,6 +25,8 @@ dependencies:
   get_it: ^7.6.0
   cached_network_image: ^3.2.3
   shimmer:
+  dartz: ^0.10.1
+  dio: ^5.2.1+1
 
 # These are your dev dependencies
 dev_dependencies:

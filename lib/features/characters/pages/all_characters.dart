@@ -34,7 +34,7 @@ class AllCharacters extends StatelessWidget {
     return Scaffold(
       body: Query(
         options: QueryOptions(
-            fetchPolicy: FetchPolicy.networkOnly,
+            fetchPolicy: FetchPolicy.cacheAndNetwork,
             variables: const {"page": 1},
             document: allCharactersQuery()),
         builder: (result, {fetchMore, refetch}) {
