@@ -1,11 +1,15 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:graphql_flutter/graphql_flutter.dart';
 import 'package:sw_and_rick_morty_app/config/theme/light/main.dart';
 import 'package:sw_and_rick_morty_app/features/auth/pages/auth_handler.dart';
+import 'package:sw_and_rick_morty_app/features/characters/data/providers/graphql/provider.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
+  await initHiveForFlutter();
+
   runApp(const Application());
 }
 
@@ -14,7 +18,13 @@ class Application extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const ProviderScope(child: MyApp());
+    return ProviderScope(child: Consumer(
+      builder: (ctx, ref, child) {
+        final client = ref.watch(graphqlstateProvider);
+        return GraphQLProvider(
+            client: client.widget_client, child: const MyApp());
+      },
+    ));
   }
 }
 
@@ -25,9 +35,6 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      localizationsDelegates: context.localizationDelegates,
-      supportedLocales: context.supportedLocales,
-      locale: context.locale,
       debugShowCheckedModeBanner: false,
       title: 'Starwars & Rick n Morty',
       theme: mainLightTheme(),

@@ -15,25 +15,20 @@ dependencies:
   flutter_riverpod: ^2.3.6
   # language localiaztion
   easy_localization: ^3.0.2
-  # database related pkgs
-  drift:
-  sqlite3_flutter_libs: ^0.5.15
-  path_provider: ^2.0.15
-  path:
   # data persistence
-
   shared_preferences: ^2.2.0
 
+  font_awesome_flutter:
+  graphql_flutter: ^5.1.2
   # local auth pkg
-  local_auth: ^2.1.6
   logger: ^1.4.0
   get_it: ^7.6.0
-  flutter_local_notifications: ^15.1.0+1
+  cached_network_image: ^3.2.3
+  shimmer:
 
 # These are your dev dependencies
 dev_dependencies:
   flutter_launcher_icons: ^0.13.1
-  drift_dev:
   build_runner:
   flutter_test:
     sdk: flutter

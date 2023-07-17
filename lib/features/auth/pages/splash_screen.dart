@@ -16,6 +16,7 @@ class SplashScreen extends StatelessWidget {
         children: [
           const Spacer(),
           Container(
+            clipBehavior: Clip.antiAlias,
             height: 200,
             width: 200,
             decoration: const BoxDecoration(
