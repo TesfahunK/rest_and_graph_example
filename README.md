@@ -1,6 +1,6 @@
 # sw_and_rick_morty_app
 
-A new Flutter project.
+A Flutter project to guide students on the basic setup for consuming rest and Graphql APIs
 
 ## Getting Started
 
